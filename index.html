@@ -1,233 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evenflow Home Solutions | Bristol</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #2c2c2c;
-      background: #f9f7f4;
-    }
-
-    header {
-      background: #1a3c5e;
-      color: #fff;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    header p {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #1a3c5e 0%, #2e6da4 100%);
-      color: #fff;
-      text-align: center;
-      padding: 5rem 2rem 4rem;
-    }
-
-    .hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 560px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
-    }
-
-    .hero a {
-      display: inline-block;
-      background: #e8a020;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.85rem 2.2rem;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .hero a:hover { background: #c8881a; }
-
-    .services {
-      max-width: 960px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .services h3 {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #1a3c5e;
-      margin-bottom: 2.5rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1.8rem 1.4rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-
-    .card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .card h4 {
-      font-size: 1.1rem;
-      color: #1a3c5e;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.5;
-    }
-
-    .about {
-      background: #eef2f7;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .about h3 {
-      font-size: 1.8rem;
-      color: #1a3c5e;
-      margin-bottom: 1rem;
-    }
-
-    .about p {
-      max-width: 640px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #444;
-    }
-
-    .contact {
-      max-width: 480px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .contact h3 {
-      font-size: 1.8rem;
-      color: #1a3c5e;
-      margin-bottom: 1rem;
-    }
-
-    .contact p { color: #444; line-height: 1.7; }
-
-    .contact a {
-      color: #2e6da4;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer {
-      background: #1a3c5e;
-      color: #cdd8e3;
-      text-align: center;
-      padding: 1.2rem 2rem;
-      font-size: 0.85rem;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EvenFlow Home Solutions | Bristol Home Improvement Services</title>
+  <meta name="description" content="EvenFlow Home Solutions helps Bristol homeowners with reliable property maintenance, repairs, and home improvement services. Get a free quote today.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#top">EvenFlow Home Solutions</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <header>
-    <div>
-      <h1>Evenflow Home Solutions</h1>
-      <p>Bristol's trusted home improvement specialists</p>
+  <header id="top" class="py-5 bg-primary text-white">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold mb-3">Trusted Home Improvements in Bristol</h1>
+          <p class="lead mb-4">From everyday repairs to full home refresh projects, EvenFlow Home Solutions delivers dependable workmanship, transparent pricing, and friendly local service.</p>
+          <a class="btn btn-light btn-lg me-2" href="#contact">Get Your Free Quote</a>
+          <a class="btn btn-outline-light btn-lg" href="#services">View Services</a>
+        </div>
+        <div class="col-lg-4">
+          <div class="bg-white text-dark rounded-3 shadow p-4">
+            <h2 class="h5">Why homeowners choose us</h2>
+            <ul class="mb-0">
+              <li>Local Bristol team</li>
+              <li>Clear communication</li>
+              <li>Reliable turnaround times</li>
+              <li>High-quality finish</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <h2>Your Home, Transformed</h2>
-    <p>Professional home improvement services across Bristol and the surrounding area. Quality workmanship, honest prices.</p>
-    <a href="#contact">Get in Touch</a>
-  </section>
+  <main>
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Services</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">General Property Maintenance</h3>
+                <p class="mb-0">Routine fixes and ongoing care to keep your home safe, comfortable, and looking its best year-round.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">Renovations & Upgrades</h3>
+                <p class="mb-0">Kitchen, bathroom, and interior updates designed around your budget, style, and long-term needs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">Repairs & Finishing Work</h3>
+                <p class="mb-0">Fast, professional support for damaged fixtures, walls, flooring, and other common household issues.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="services">
-    <h3>Our Services</h3>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🔨</div>
-        <h4>General Repairs</h4>
-        <p>From minor fixes to major repairs, we handle it all with care and precision.</p>
+    <section id="about" class="py-5 bg-white border-top border-bottom">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2>About EvenFlow Home Solutions</h2>
+            <p class="mb-0">We help Bristol homeowners improve and maintain their properties with practical, high-quality solutions. Whether you need a one-off repair or a larger improvement project, our team focuses on honest advice, tidy work, and dependable results.</p>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 rounded-3 bg-light border">
+              <h3 class="h5">Serving Bristol & nearby areas</h3>
+              <p class="mb-0">Available for domestic projects across Bristol and surrounding communities.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="icon">🏠</div>
-        <h4>Renovations</h4>
-        <p>Full room renovations tailored to your vision and budget.</p>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h2>Contact Us</h2>
+            <p>Ready to discuss your project? Send a message below or connect with us on social media.</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <a class="btn btn-outline-primary" href="https://www.facebook.com/evenflowhomesolutions" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a class="btn btn-outline-danger" href="https://www.instagram.com/evenflowhomesolutions" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a class="btn btn-outline-info" href="https://www.linkedin.com/company/evenflow-home-solutions" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p class="mb-0">Use the contact form for project enquiries and one of our team will get back to you.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="bg-white border rounded-3 shadow-sm p-4" action="https://formsubmit.co/info@evenflowhomesolutions.co.uk" method="post">
+              <input type="hidden" name="_subject" value="New EvenFlow Home Solutions Enquiry">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+              <div class="mb-3">
+                <label class="form-label" for="name">Full Name</label>
+                <input class="form-control" id="name" name="name" type="text" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-control" id="email" name="email" type="email" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input class="form-control" id="phone" name="phone" type="tel">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="message">How can we help?</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button class="btn btn-primary w-100" type="submit">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="icon">🚿</div>
-        <h4>Bathrooms</h4>
-        <p>Complete bathroom fitting and refurbishment to a high standard.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🍳</div>
-        <h4>Kitchens</h4>
-        <p>Design and installation of beautiful, functional kitchens.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🪟</div>
-        <h4>Carpentry</h4>
-        <p>Bespoke joinery, doors, skirting, and fitted furniture.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🎨</div>
-        <h4>Decorating</h4>
-        <p>Interior and exterior painting and decorating to a professional finish.</p>
-      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+      <small>&copy; <span id="year"></span> EvenFlow Home Solutions. Bristol, UK.</small>
     </div>
-  </section>
-
-  <section class="about">
-    <h3>About Us</h3>
-    <p>Evenflow Home Solutions is a Bristol-based team dedicated to making home improvement straightforward and stress-free. We pride ourselves on transparent pricing, reliable scheduling, and craftsmanship that lasts.</p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h3>Contact Us</h3>
-    <p>Ready to start your project? Get in touch and we'll be happy to discuss your requirements and provide a free quote.</p>
-    <br />
-    <p>📧 <a href="mailto:info@evenflowhomesolutions.co.uk">info@evenflowhomesolutions.co.uk</a></p>
-    <br />
-    <p>📍 Bristol, UK</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Evenflow Home Solutions. All rights reserved.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

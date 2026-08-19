@@ -281,10 +281,52 @@
     </section>
 
     <section id="contact" class="py-5 bg-primary text-white">
-      <div class="container text-center">
-        <h2>Get In Touch</h2>
-        <p class="mb-4">Contact us for more information and pricing.</p>
-        <a class="btn btn-light btn-lg" href="mailto:info@evenflowhomesolutions.co.uk">Email Us</a>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <h2 class="text-center">Get In Touch</h2>
+            <p class="text-center mb-4">Contact us for more information and pricing.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white text-dark rounded-3 p-4 shadow">
+              <div class="mb-3">
+                <label for="contact-name" class="form-label fw-semibold">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="contact-name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="mb-3">
+                <label for="contact-email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="contact-email" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="contact-phone" class="form-label fw-semibold">Phone <span class="text-danger">*</span></label>
+                <input type="tel" class="form-control" id="contact-phone" name="phone" required placeholder="e.g. 07700 900000">
+              </div>
+              <div class="mb-3">
+                <label for="contact-message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="contact-message" name="message" rows="4" required placeholder="Tell us about your project or any questions you have…"></textarea>
+              </div>
+              <hr class="my-3">
+              <p class="text-muted small mb-3">Optional — helps us prepare for your enquiry</p>
+              <div class="mb-3">
+                <label for="contact-address" class="form-label fw-semibold">Property Address</label>
+                <input type="text" class="form-control" id="contact-address" name="property_address" placeholder="e.g. 12 High Street, Bath, BA1 1AA">
+              </div>
+              <div class="mb-4">
+                <label for="contact-bedrooms" class="form-label fw-semibold">Number of Bedrooms</label>
+                <select class="form-select" id="contact-bedrooms" name="bedrooms">
+                  <option value="" selected>— Select —</option>
+                  <option value="1">1 bedroom</option>
+                  <option value="2">2 bedrooms</option>
+                  <option value="3">3 bedrooms</option>
+                  <option value="4">4 bedrooms</option>
+                  <option value="5">5 bedrooms</option>
+                  <option value="6+">6+ bedrooms</option>
+                </select>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>

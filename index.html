@@ -3,402 +3,550 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EvenFlow Home Solutions</title>
-    <meta name="description" content="Creating energy efficient homes, without the guesswork.">
+    <title>EvenFlow Home Solutions | Your Home, Understood</title>
+    <meta name="description" content="Independent home energy assessments and practical improvement plans across Bath, Bristol, Keynsham and the South West.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
-        /* Override Bootstrap primary color */
         :root {
-            --bs-primary: rgb(10, 70, 68);
-            --bs-primary-rgb: 10, 70, 68;
+            --ink: #173863;
+            --deep: #073f40;
+            --green: #47c988;
+            --mint: #e8f5ed;
+            --cream: #f7f5ef;
+            --muted: #5d6b73;
+            --line: #d9e5df;
+            --shadow: 0 18px 50px rgba(7, 63, 64, .11);
+            --bs-primary: var(--deep);
+            --bs-primary-rgb: 7, 63, 64;
+            --bs-body-color: var(--ink);
+            --bs-body-bg: var(--cream);
         }
-        /* Give carousel prev/next buttons a dark background so they're visible on white slides */
-        #testimonialsCarousel .carousel-control-prev,
-        #testimonialsCarousel .carousel-control-next {
-            width: 2.5rem;
-            background-color: rgba(0, 0, 0, 0.35);
-            border-radius: 0.25rem;
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            color: var(--ink);
+            background: var(--cream);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.65;
+            caret-color: transparent;
+            overflow-x: hidden;
         }
-        /* Indent slide content so arrows don't overlap text */
-        #testimonialsCarousel .carousel-inner {
-            padding: 0 3rem;
+        input, textarea, select { caret-color: auto; }
+        h1, h2, h3, h4, .navbar-brand { font-family: "Manrope", sans-serif; line-height: 1.12; }
+        h1 { font-size: clamp(3rem, 7vw, 5.9rem); letter-spacing: -.055em; }
+        h2 { font-size: clamp(2.1rem, 4vw, 3.6rem); letter-spacing: -.045em; }
+        h3 { font-size: 1.35rem; }
+        .container { max-width: 1160px; }
+        .text-muted { color: var(--muted) !important; }
+        .eyebrow {
+            color: var(--green);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        .shadow-soft { box-shadow: var(--shadow); }
+        .rounded-4 { border-radius: 24px !important; }
+        .btn {
+            --bs-btn-padding-x: 1.35rem;
+            --bs-btn-padding-y: .8rem;
+            --bs-btn-border-radius: 999px;
+            font-weight: 700;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .btn-primary {
+            --bs-btn-bg: var(--green);
+            --bs-btn-border-color: var(--green);
+            --bs-btn-color: var(--deep);
+            --bs-btn-hover-bg: #6ce0a1;
+            --bs-btn-hover-border-color: #6ce0a1;
+            --bs-btn-hover-color: var(--deep);
+            box-shadow: none;
+        }
+        .btn-primary:hover { box-shadow: 0 10px 25px rgba(71, 201, 136, .28); transform: translateY(-2px); }
+        .btn-outline-light:hover { color: var(--deep); }
+
+        .site-header {
+            z-index: 1030;
+            background: rgba(255,255,255,.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+        }
+        .brand-logo { width: 58px; height: 58px; object-fit: contain; border-radius: 14px; }
+        .brand-name { color: var(--deep); font-size: 1rem; letter-spacing: -.02em; }
+        .brand-tagline { color: var(--muted); font-family: "DM Sans", sans-serif; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+        .navbar-nav .nav-link { color: var(--ink); font-size: .9rem; font-weight: 600; }
+        .navbar-nav .nav-link:hover { color: #129e6c; }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--deep);
+            color: #fff;
+        }
+        .hero::before {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(71,201,136,.22), transparent 33%);
+            content: "";
+        }
+        .hero-content { position: relative; min-height: 650px; }
+        .hero-copy { min-height: 650px; padding: 80px 54px 80px 0; }
+        .hero h1 { max-width: 650px; }
+        .hero h1 span { color: var(--green); }
+        .hero-intro { max-width: 520px; color: #d9ebe5; font-size: 1.15rem; }
+        .hero-photo {
+            min-height: 650px;
+            background: url("assets/images/hero-homes.jpg") center/cover;
+        }
+
+        .mission { padding: 58px 0 24px; }
+        .mission-card {
+            padding: 35px 42px;
+            border: 1px solid var(--line);
+            background: #fff;
+        }
+        .mission-card p { width: 100%; max-width: none; margin: 0; color: var(--muted); font-size: 1.08rem; }
+        .mission-card p + p { margin-top: 18px; }
+
+        .quick-start { padding: 34px 0 0; }
+        .quick-start-card {
+            padding: 35px 42px;
+            border: 1px solid var(--line);
+            background: #fff;
+        }
+        .quick-start-card h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); }
+        .quick-start-card p { color: var(--muted); }
+        .quick-start-form { min-width: 0; }
+        .quick-start-form .hs-form-frame { min-height: 120px; }
+
+        .intro { padding: 115px 0 105px; }
+        .intro-copy { color: var(--muted); font-size: 1.08rem; }
+        .intro-copy strong { color: var(--deep); }
+        .stat-number { color: var(--green); font-family: "Manrope", sans-serif; font-size: 3rem; line-height: 1; }
+        .benefit {
+            padding: 22px;
+            border: 1px solid var(--line);
+            background: #fff;
+            font-weight: 700;
+        }
+
+        .section { padding: 105px 0; }
+        .section--white { background: #fff; }
+        .service-card {
+            min-height: 100%;
+            padding: 30px;
+            border: 1px solid var(--line);
+            background: var(--cream);
+        }
+        .service-tag {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: var(--mint);
+            color: var(--deep);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .service-card p, .service-card li { color: var(--muted); }
+        .service-card ul { list-style: none; }
+        .service-card li { position: relative; padding-left: 23px; font-size: .94rem; }
+        .service-card li::before {
+            position: absolute;
+            top: .62em;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            content: "";
+        }
+        .service-card .right-for { border-top: 1px solid var(--line); font-size: .85rem; }
+        .service-card--wide { background: #eef6ef; }
+
+        .feature-band { background: var(--deep); color: #fff; }
+        .feature-image {
+            min-height: 510px;
+            background: url("assets/images/energy-monitor.jpg") center/cover;
+        }
+        .feature-copy { padding: 70px clamp(30px, 7vw, 100px); }
+        .feature-copy p { color: #d6e8e2; }
+        .feature-list { list-style: none; }
+        .feature-list li { position: relative; padding-left: 38px; }
+        .feature-list li::before {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--deep);
+            content: "✓";
+            font-size: .8rem;
+            font-weight: 700;
+            line-height: 23px;
+            text-align: center;
+        }
+
+        .bill-photo {
+            min-height: 410px;
+            background: url("assets/images/bill-check.jpg") center/cover;
+        }
+        .bill-copy p, .bill-copy li { color: var(--muted); }
+        .bill-copy ul { list-style: none; }
+        .bill-copy li { padding-left: 23px; }
+        .bill-copy li::before { margin-left: -23px; margin-right: 11px; color: var(--green); content: "✓"; font-weight: 700; }
+
+        .testimonial-image {
+            min-height: 370px;
+            background: url("assets/images/family-walk.jpg") center/cover;
+        }
+        blockquote p {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            letter-spacing: -.035em;
+            line-height: 1.22;
+        }
+
+        .trust { padding: 105px 0 115px; background: var(--mint); }
+        .trust-card {
+            min-height: 205px;
+            padding: 22px 16px 18px;
+            border: 1px solid rgba(23,56,99,.12);
+            background: #fff;
+        }
+        .trust-card img { width: 100%; height: 110px; object-fit: contain; }
+        .trust-card strong { font-size: .83rem; line-height: 1.35; }
+        .trust-card small { color: var(--muted); font-size: .72rem; }
+        .trust-card--ecmk img { width: 139px; height: 37px; }
+
+        .contact { padding: 105px 0; background: var(--deep); color: #fff; }
+        .contact p { max-width: 590px; color: #d6e8e2; font-size: 1.08rem; }
+        footer { background: #063333; color: #b9d2ca; font-size: .84rem; }
+        footer a { color: #fff; }
+
+        @media (max-width: 991.98px) {
+            .hero-content, .hero-copy { min-height: auto; }
+            .hero-copy { padding: 80px 0 50px; }
+            .hero-photo { min-height: 390px; margin-right: -12px; margin-left: -12px; }
+            .feature-image { min-height: 360px; }
+            .bill-photo { min-height: 310px; }
+            .testimonial-image { min-height: 300px; }
+        }
+        @media (max-width: 575.98px) {
+            .brand-logo { width: 48px; height: 48px; }
+            .brand-tagline { display: none; }
+            h1 { font-size: 3.35rem; }
+            .hero-photo { min-height: 300px; }
+            .mission, .quick-start { padding-top: 20px; }
+            .mission-card, .quick-start-card { padding: 27px 21px; }
+            .section, .intro, .trust, .contact { padding: 75px 0; }
+            .feature-copy { padding: 58px 22px; }
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L30SWDJZ0X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-L30SWDJZ0X');
-    </script>
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#top">EvenFlow Home Solutions</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#difference">Why we are different?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stages">Four Stages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#assessment">Assessment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Get In Touch</a></li>
-                </ul>
+<body>
+    <header class="site-header sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#top" aria-label="EvenFlow Home Solutions home">
+                    <img class="brand-logo" src="assets/images/APM.png" alt="EvenFlow Home Solutions logo">
+                    <span>
+                        <strong class="brand-name d-block">EvenFlow Home Solutions</strong>
+                        <small class="brand-tagline d-block">Your Home, Understood</small>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#trust">Why trust us?</a>
+                        <a class="btn btn-primary ms-lg-2" href="#quick-start">Start a conversation</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <header id="top" class="py-5 bg-primary text-white">
-        <div class="container py-4">
-            <h1 class="display-5 fw-bold">EvenFlow Home Solutions</h1>
-            <p class="lead">Creating energy efficient homes, without the guesswork.</p>
-            <p class="mb-4">We help homeowners across Bath, Bristol and the local areas to cut through the confusion of retrofitting - turning "where do I even start" into a clear plan you can trust</p>
-            <a class="btn btn-light btn-lg" href="#contact">Get In Touch</a>
-        </div>
+        </nav>
     </header>
 
-    <main>
-        <section class="py-5">
-            <div class="container">
-                <!--<div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Customer testimonials">
-                  <div class="carousel-inner">-->
-                <!--<div class="carousel-item active">-->
-                <blockquote class="blockquote bg-white border rounded-3 p-4 shadow-sm mb-0">
-                    <p class="mb-3">"Getting multiple heat pump quotes was overwhelming until Rich stepped in. He asked the right questions, flagged things we hadn't considered, and helped us compare options on a level playing field. We left the conversation feeling informed and confident — not just sold to."</p>
-                    <footer class="blockquote-footer mb-0">Helen Stone, Keynsham Resident</footer>
-                </blockquote>
-                <!--</div>-->
-                <!--<div class="carousel-item">
-                  <blockquote class="blockquote bg-white border rounded-3 p-4 shadow-sm mb-0">
-                    <p class="mb-3">"Placeholder testimonial — a second happy homeowner shares how EvenFlow helped them cut through the noise and make a confident decision about their home retrofit."</p>
-                    <footer class="blockquote-footer mb-0">Placeholder Name, Bristol Resident</footer>
-                  </blockquote>
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="row g-0">
+                    <div class="col-lg-5 d-flex align-items-center">
+                        <div class="hero-copy">
+                            <h1>Your home,<br><span>understood.</span></h1>
+                            <p class="hero-intro my-4">We help homeowners create more energy efficient homes — reducing running costs, improving comfort and home health, and increasing property value.</p>
+                            <a class="btn btn-primary" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 d-none d-lg-block" aria-hidden="true"></div>
+                    <div class="col-lg-6">
+                        <div class="hero-photo" role="img" aria-label="A row of homes with solar panels"></div>
+                    </div>
                 </div>
-
-                <div class="carousel-item">
-                  <blockquote class="blockquote bg-white border rounded-3 p-4 shadow-sm mb-0">
-                    <p class="mb-3">"Placeholder testimonial — a third satisfied customer explains how the EvenFlow team saved them time, money, and stress on their heat pump installation journey."</p>
-                    <footer class="blockquote-footer mb-0">Placeholder Name, Bath Resident</footer>
-                  </blockquote>
-                </div>-->
-
-            </div>
-
-            <!--<button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous testimonial</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next testimonial</span>
-            </button>-->
-            <!--<div class="carousel-indicators position-static mt-3">
-              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active bg-secondary" aria-current="true" aria-label="Testimonial 1"></button>
-              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" class="bg-secondary" aria-label="Testimonial 2"></button>
-              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" class="bg-secondary" aria-label="Testimonial 3"></button>
-            </div>-->
-            <!--</div>
-            </div>-->
-        </section>
-
-        <section class="pb-5">
-            <div class="container text-center">
-                <a class="btn btn-outline-primary btn-lg" href="#stages">See how it works (click to process)</a>
             </div>
         </section>
 
-        <section id="difference" class="py-5 bg-white border-top border-bottom">
+        <section class="mission" aria-label="What we do">
             <div class="container">
-                <h2 class="mb-4">Why we are different?</h2>
-                <h3 class="h4">Advice first. Products second.</h3>
-                <p>Renovating and upgrading a home is usually fragmented, slow and confusing. We exist to fix that — putting you at the centre of every decision, not the trades.</p>
+                <div class="mission-card rounded-4 shadow-soft">
+                    <p>Before you spend a penny on improvements, you need a clear, accurate picture of your home as it is today.</p>
+                    <p>We provide independent assessments - EPCs and precise home measurements - giving you the foundations to make smart decisions about your home's future.</p>
+                    <p>We are on a mission to fix some of the 27 million leaky homes, contributing to 28% of the UK’s Carbon output.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="row g-4 mt-2">
-                    <div class="col-md-6">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h5">Independent by design</h4>
-                            <p class="mb-0">We don't sell insulation, boilers or solar panels. Our job is to give you honest, unbiased advice so every decision is yours to make with confidence.</p>
+        <section id="quick-start" class="quick-start" aria-labelledby="quick-start-title">
+            <div class="container">
+                <div class="quick-start-card rounded-4 shadow-soft">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <p class="eyebrow mb-2">Start here</p>
+                            <h2 id="quick-start-title">Tell us about your home.</h2>
+                            <p class="mt-3 mb-0">Whether you are buying, selling, planning improvements or simply unsure where to begin, we can help you find the next right step.</p>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h5">A trusted partner network</h4>
-                            <p class="mb-0">When it's time to build, we introduce you to vetted architects, engineers and installers suited to your project — you're always free to choose someone else.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h5">One coherent plan</h4>
-                            <p class="mb-0">Instead of juggling separate specialists who don't talk to each other, we bring everything together into a single Home Plan built around your budget and goals</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h5">Four stages, start to finish</h4>
-                            <p class="mb-0">From your first phone call to living comfortably in a lower-bill home, we guide you through every stage — and we don't disappear at handover.</p>
+                        <div class="col-lg-8">
+                            <div class="quick-start-form">
+                                <div class="hs-form-frame" data-region="eu1" data-form-id="a93db1bf-e5ff-4074-9c56-25e95c550a03" data-portal-id="149046114"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="stages" class="py-5">
+        <section class="intro">
             <div class="container">
-                <h2 class="mb-4">Four stages, start to finish</h2>
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="h-100 bg-white border rounded-3 p-4 shadow-sm">
-                            <h3 class="h5">01 Concept — Understanding you and your home</h3>
-                            <p class="mb-0">A free initial call to hear your goals, followed by an in-depth on-site assessment — energy performance, condition, ventilation and more — giving us a clear picture of where you stand today.</p>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5">
+                        <p class="eyebrow mb-3">A better starting point</p>
+                        <h2>Good improvements start with good information.</h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="intro-copy">
+                            <p>We provide independent assessments — EPCs and precise home measurements — giving you the foundations to make smart decisions about your home's future.</p>
+                            <p>Our mission is to help fix some of the <strong>27 million leaky homes</strong> contributing to 28% of the UK's carbon output. That means practical advice that makes homes healthier, more comfortable and more efficient.</p>
+                            <div class="d-flex align-items-center gap-3 mt-4 text-dark"><strong class="stat-number">27m</strong><span>homes in the UK need a clearer path to better performance.</span></div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="h-100 bg-white border rounded-3 p-4 shadow-sm">
-                            <h3 class="h5">02 Definition — A practical, deliverable plan</h3>
-                            <p class="mb-0">Using our expertise and partner network, we turn findings into a ready-to-build plan: options, costs, timelines, technical requirements, and any planning or building regulation submissions.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="h-100 bg-white border rounded-3 p-4 shadow-sm">
-                            <h3 class="h5">03 Delivery — Coordinating trusted specialists</h3>
-                            <p class="mb-0">We connect you with vetted installation partners and act as your project sponsor, overseeing quality, coordination, compliance and certification throughout.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="h-100 bg-white border rounded-3 p-4 shadow-sm">
-                            <h3 class="h5">04 Transition — Making sure it works for you</h3>
-                            <p class="mb-0">We help you understand your home's new systems, then review performance after completion to confirm the improvements are delivering real comfort, efficiency and value.</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="row g-3 mt-5">
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Improved energy efficiency</div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Lower carbon emissions</div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Lower running costs</div></div>
                 </div>
             </div>
         </section>
 
-        <section id="assessment" class="py-5 bg-white border-top border-bottom">
+        <section id="services" class="section section--white">
             <div class="container">
-                <h2 class="mb-2">What the on-site assessment covers</h2>
-                <h3 class="h5 mb-4 text-muted">A full picture before we recommend anything</h3>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Energy Consumption</h4>
-                            <p class="mb-0">We go through your current bills together, explain what's driving them, and find where the savings are.</p>
-                        </div>
+                <div class="row g-4 align-items-end mb-5">
+                    <div class="col-lg-6">
+                        <p class="eyebrow mb-3">Product space</p>
+                        <h2 class="mb-0">Choose the picture<br>you need.</h2>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Energy Performance</h4>
-                            <p class="mb-0">A government-standard assessment of your home's fabric, producing an EPC where needed to guide improvements.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Floor Plans</h4>
-                            <p class="mb-0">A 3D digital model of your home that can be shared directly with architects for redesigns and new layouts.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Condition Assessment</h4>
-                            <p class="mb-0">We inspect the existing building for defects and opportunities, using thermal imaging to bring issues to light.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Ventilation</h4>
-                            <p class="mb-0">Airflow is checked carefully — vital for comfort, and for protecting against damp and mould.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="h-100 p-4 border rounded-3 bg-light">
-                            <h4 class="h6">Character &amp; Significance</h4>
-                            <p class="mb-0">For period properties, we make sure any work respects existing features and stays in keeping with planning requirements.</p>
-                        </div>
+                    <div class="col-lg-6">
+                        <p class="text-muted mb-0">A whole-house, holistic approach with independent, unbiased advice across Bath, Bristol, Keynsham and the South West.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="py-5">
-            <div class="container">
-                <figure class="bg-white border rounded-3 p-4 shadow-sm">
-                    <blockquote class="blockquote mb-3">
-                        <p class="mb-0">"We'd both renovated our own homes and felt the same disconnect — energy specialists, trades and designers who never talked to each other. EvenFlow exists to bring those moving parts together."</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer mb-0">Rich New &amp; James Harwood<br>Founders, EvenFlow Home Solutions</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section class="py-5 bg-white border-top border-bottom">
-            <div class="container">
-                <h2>Who we work with</h2>
-                <h3 class="h5 text-muted">Homeowners who want to invest wisely</h3>
-                <p class="mb-0">We support homeowners across the South West who want to make thoughtful, well-planned improvements to their properties — whether you're a new buyer, a long-term resident, landlord or preparing to sell. We focus on projects where expert guidance genuinely unlocks lasting value.</p>
-            </div>
-        </section>
-
-        <section class="py-5">
-            <div class="container">
-                <h2>Credentials</h2>
-                <h3 class="h5 text-muted">Qualified to give advice you can rely on</h3>
-                <p>Every recommendation is grounded in recognised training and accreditation — not guesswork.</p>
-                <ul class="mb-0">
-                    <li>ABBE Level 3 Certificate in Domestic Energy Assessment</li>
-                    <li>ABBE Level 5 Diploma in Retrofit Coordination &amp; Risk Management</li>
-                    <li>Level 3 Award in Energy Efficiency for Older &amp; Traditional Buildings</li>
-                    <li>APM Project Fundamentals Qualification</li>
-                    <li>ABBE registered</li>
-                    <li>TrustMark accredited</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="py-5 bg-white border-top border-bottom">
-            <div class="container">
-                <h2>Join our social media family!</h2>
-                <p>We connect you with our amazing community and the latest updates in Home Energy Performance. Follow us on Instagram to stay informed and engaged in meaningful conversations!</p>
-                <a class="" href="https://www.instagram.com/evenflowhomesolutions" target="_blank" rel="noopener noreferrer">
-                    <i class="text-primary bi bi-instagram display-3"></i>
-                </a>
-            </div>
-        </section>
-
-        <section class="py-5">
-            <div class="container">
-                <div class="row g-4">
+                <div class="row g-3">
                     <div class="col-lg-4">
-                        <div class="h-100 bg-white border rounded-3 p-4">
-                            <h2 class="h4">Coverage</h2>
-                            <p class="mb-0">We can currently cover Bath, Bristol and the South West but looking to expand our services.</p>
-                        </div>
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
+                            <span class="service-tag align-self-start mb-4">01 · A clear baseline</span>
+                            <h3>The Essential EPC</h3>
+                            <p>For anyone selling, buying or renting.</p>
+                            <ul class="d-grid gap-2 p-0 my-3">
+                                <li>Legally valid Energy Performance Certificate (A–G rating)</li>
+                                <li>RdSAP energy assessment</li>
+                                <li>Improvement recommendations report</li>
+                            </ul>
+                            <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> sellers, landlords and buyers wanting a baseline.</p>
+                        </article>
                     </div>
                     <div class="col-lg-4">
-                        <div class="h-100 bg-white border rounded-3 p-4">
-                            <h2 class="h4">Cost</h2>
-                            <p class="mb-0">We providing costs depending on your requirements so contact us for more information and pricing</p>
-                        </div>
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
+                            <span class="service-tag align-self-start mb-4">02 · Most complete</span>
+                            <h3>The Full Picture</h3>
+                            <p>For anyone planning improvements or purchasing a property.</p>
+                            <ul class="d-grid gap-2 p-0 my-3">
+                                <li>Everything in The Essential</li>
+                                <li>Measured floor plan</li>
+                                <li>Condition report: damp, mould and structural concerns noted</li>
+                                <li>Occupancy assessment: how you use your home affects recommendations</li>
+                                <li>Ventilation survey <strong>(coming soon)</strong></li>
+                            </ul>
+                            <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> new buyers, homeowners before renovation and anyone unsure where to start.</p>
+                        </article>
                     </div>
                     <div class="col-lg-4">
-                        <div class="h-100 bg-white border rounded-3 p-4">
-                            <h2 class="h4">Personal Service and Long-Term Support</h2>
-                            <p class="mb-0">We are a small team from a range of customer-focused roles and experiences. We pride ourselves on providing exceptional services in line with your needs and desired outcomes. We don't do tick boxes, we provide customer service based upon trust, expert knowledge and the home owner at the centre of all we do.</p>
-                        </div>
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
+                            <span class="service-tag align-self-start mb-4">03 · Coming soon</span>
+                            <h3>Home Improvement Plan — “The Roadmap”</h3>
+                            <p>For anyone ready to invest in their home.</p>
+                            <ul class="d-grid gap-2 p-0 my-3">
+                                <li>Everything in The Full Picture</li>
+                                <li>Medium-term improvement plan with prioritised measures</li>
+                                <li>Estimated costs and potential savings for each improvement</li>
+                                <li>Guidance on funding, grants and sequencing work correctly</li>
+                                <li>Significance assessment for older or listed homes</li>
+                            </ul>
+                            <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> homeowners planning upgrades, retrofit projects and maximising property value.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">                        
-                        <div class="hs-form-frame" data-region="eu1" data-form-id="a93db1bf-e5ff-4074-9c56-25e95c550a03" data-portal-id="149046114"></div>
-                    </div>
-                    <div class="col-lg-6 align-content-center mt-3">
-                        <img class="img-fluid" src="./assets/images/alvin-c-8qbHt2C7z4E-unsplash.jpg" />
+                    <div class="col-12">
+                        <article class="service-card service-card--wide rounded-4">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <span class="service-tag align-self-start mb-4">Add-on · The Money Check</span>
+                                    <h3>Bill Health Check</h3>
+                                    <p>For anyone who wants to know they're not overpaying.</p>
+                                    <p class="mb-0">A clear, independent review of your current energy bills, with plain-English findings and clear next steps.</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p class="right-for pt-3 pt-lg-0 mt-lg-0 mb-0"><strong>Includes:</strong> review of your current tariff against market rates using Ofgem-approved comparison tools, energy efficiency measures and behaviour changes.<br><br><strong>Right for:</strong> anyone with high bills, anyone who has not reviewed their tariff recently, and homeowners who have made improvements but have not seen their bills drop.</p>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-5 bg-primary text-white">
-            <div class="container text-center">
-                <h2>Get In Touch</h2>
-                <p class="mb-4">Contact us for more information and pricing.</p>
-                <a class="btn btn-light btn-lg" href="mailto:info@evenflowhomesolutions.co.uk">Email Us</a>
-
+        <section class="feature-band">
+            <div class="container-fluid px-0">
+                <div class="row g-0">
+                    <div class="col-lg-6"><div class="feature-image h-100" role="img" aria-label="A home energy monitor beside an energy advice guide"></div></div>
+                    <div class="col-lg-6">
+                        <div class="feature-copy">
+                            <p class="eyebrow mb-3">Advice that sees the whole home</p>
+                            <h2>Independent by design.</h2>
+                            <p>We do not sell insulation, boilers or solar panels. We give you an honest view of your home so every decision is yours to make with confidence.</p>
+                            <ul class="feature-list d-grid gap-3 mt-4 mb-0 p-0">
+                                <li><strong>Whole-house thinking.</strong><br>Energy use, condition, occupancy and ventilation considered together.</li>
+                                <li><strong>Advice before action.</strong><br>Clear priorities before you commit to improvements.</li>
+                                <li><strong>Local understanding.</strong><br>Bath, Bristol, Keynsham and the wider South West region.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6"><div class="bill-photo rounded-4 shadow-soft" role="img" aria-label="A close-up of a five pound note"></div></div>
+                    <div class="col-lg-6">
+                        <div class="bill-copy">
+                            <p class="eyebrow mb-3">The Money Check</p>
+                            <h2>Make your bills work harder.</h2>
+                            <p>Small changes can make a real difference, but it helps to know where your money is going first. Our Bill Health Check turns confusing energy bills into a simple, useful action plan.</p>
+                            <ul class="d-grid gap-2 p-0 my-4">
+                                <li>Current tariff reviewed against market rates</li>
+                                <li>Energy-efficient measures and behaviour changes highlighted</li>
+                                <li>Plain-English summary with clear next steps</li>
+                            </ul>
+                            <a class="btn btn-primary" href="#quick-start">Ask about a Bill Health Check <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="section section--white">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-4"><div class="testimonial-image rounded-4" role="img" aria-label="A family walking together outdoors"></div></div>
+                    <div class="col-lg-8">
+                        <blockquote class="mb-0">
+                            <p class="mb-4">“Getting multiple heat pump quotes was overwhelming until Rich stepped in. He asked the right questions, flagged things we hadn't considered, and helped us compare options on a level playing field. We left the conversation feeling informed and confident — not just sold to.”</p>
+                            <cite class="text-muted fst-normal">Helen, Keynsham Resident</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust" class="trust">
+            <div class="container">
+                <div class="row g-5 mb-5">
+                    <div class="col-lg-5">
+                        <p class="eyebrow mb-3">Why trust us?</p>
+                        <h2>Standards matter.<br>So does service.</h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <p class="text-muted mb-0">Every recommendation is grounded in recognised training, national standards and a genuine commitment to helping homeowners move forward with confidence.</p>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+                            <img src="assets/images/energytrust.png" alt="Energy Trust logo">
+                            <strong>Energy Trust</strong><small>Trained with</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+                            <img src="assets/images/evenflow-logo.jpg" alt="TrustMark Government Endorsed Quality logo">
+                            <strong>TrustMark</strong><small>Government-endorsed quality</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+                            <img src="assets/images/energy-trust.png" alt="Association for Project Management Project Fundamentals Qualification logo">
+                            <strong>APM Project Management</strong><small>Project Fundamentals Qualification</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="trust-card trust-card--ecmk rounded-4 h-100 d-flex flex-column align-items-center justify-content-center text-center gap-3">
+                            <img src="assets/images/ecmk.svg" alt="ECMK logo">
+                            <strong>ECMK</strong><small>Accreditation Scheme Membership · ECMK308037</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 mt-4">
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Uphold standards<br><small class="text-muted fw-normal">PAS 2035 compliant national standards for managing retrofit projects</small></div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Quality assured<br><small class="text-muted fw-normal">Registered1 government-endorsed quality with TrustMark</small></div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Timely and efficient<br><small class="text-muted fw-normal">Qualified Project Manager through the Association for Project Managers</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
+                        <p class="eyebrow mb-3">Ready to understand your home?</p>
+                        <h2>Start with a conversation.</h2>
+                        <p class="mb-0">Tell us what you are planning, what you are unsure about, or simply where you would like to begin.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end">
+                        <a class="btn btn-light" href="mailto:info@evenflowhomesolutions.co.uk">Email us <span aria-hidden="true">↗</span></a>
+                        <a class="btn btn-outline-light" href="https://www.instagram.com/evenflowhomesolutions" target="_blank" rel="noopener noreferrer">Follow on Instagram <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="py-4 bg-dark text-white">
-        <div class="container text-center">
-            <small>&copy; <span id="year"></span> EvenFlow Home Solutions.</small>
+    <footer class="py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <p class="mb-0">© <span id="year"></span> EvenFlow Home Solutions</p>
+            <p class="mb-0">Your Home, Understood · <a href="mailto:info@evenflowhomesolutions.co.uk">info@evenflowhomesolutions.co.uk</a></p>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
-    <style id="silktide-consent-manager-overrides">
-        #stcm-wrapper {
-            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-            --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-            --primaryColor: #533BE2;
-            --backgroundColor: #FFFFFF;
-            --textColor: #4B494B;
-            --backdropBackgroundColor: #00000033;
-            --backdropBackgroundBlur: 0px;
-            --iconColor: #533BE2;
-            --iconBackgroundColor: #FFFFFF;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
-    <script>
-        window.silktideConsentManager.init({
-            backdrop: {
-                show: true
-            },
-            icon: {
-                position: "bottomLeft"
-            },
-            prompt: {
-                position: "bottomRight"
-            },
-            consentTypes: [
-                {
-                    id: "essential",
-                    label: "Essential",
-                    description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
-                    required: true,
-                    onAccept: function () {
-                        console.log('Add logic for the required Essential consent type here');
-                    }
-                },
-                {
-                    id: "analytics",
-                    label: "Analytics",
-                    description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
-                    defaultValue: true,
-                    gtag: "analytics_storage"
-                },
-                {
-                    id: "marketing",
-                    label: "Marketing",
-                    description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
-                    gtag: [
-                        "ad_storage",
-                        "ad_user_data",
-                        "ad_personalization"
-                    ]
-                }
-            ],
-            text: {
-                prompt: {
-                    description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
-                    acceptAllButtonText: "Accept all",
-                    acceptAllButtonAccessibleLabel: "Accept all cookies",
-                    rejectNonEssentialButtonText: "Reject non-essential",
-                    rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
-                    preferencesButtonText: "Preferences",
-                    preferencesButtonAccessibleLabel: "Toggle preferences"
-                },
-                preferences: {
-                    title: "Customize your cookie preferences",
-                    description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
-                    saveButtonText: "Save and close",
-                    saveButtonAccessibleLabel: "Save your cookie preferences",
-                    creditLinkText: "Get this banner for free",
-                    creditLinkAccessibleLabel: "Get this banner for free"
-                }
-            }
-        });
-    </script>
     <script src="https://js-eu1.hsforms.net/forms/embed/149046114.js" defer></script>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

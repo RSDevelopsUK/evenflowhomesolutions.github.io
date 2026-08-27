@@ -167,7 +167,9 @@
             content: "";
         }
         .service-card .right-for { border-top: 1px solid var(--line); font-size: .85rem; }
-        .service-card--wide { background: #eef6ef; }
+        .service-card--wide { overflow: hidden; background: #eef6ef; }
+        .service-card--wide .service-copy { padding: 30px; }
+        .service-card--wide .service-image { min-height: 320px; background: url("assets/images/alvin-c-8qbHt2C7z4E-unsplash.jpg") center/cover; }
 
         .feature-band { background: var(--deep); color: #fff; }
         .feature-image {
@@ -350,18 +352,14 @@
         <section id="services" class="section section--white">
             <div class="container">
                 <div class="row g-4 align-items-end mb-5">
-                    <div class="col-lg-6">
-                        <p class="eyebrow mb-3">Product space</p>
-                        <h2 class="mb-0">Choose the picture<br>you need.</h2>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <h2 class="mb-4">Choose the picture you need.</h2>
                         <p class="text-muted mb-0">A whole-house, holistic approach with independent, unbiased advice across Bath, Bristol, Keynsham and the South West.</p>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-lg-4">
                         <article class="service-card rounded-4 h-100 d-flex flex-column">
-                            <span class="service-tag align-self-start mb-4">01 · A clear baseline</span>
                             <h3>The Essential EPC</h3>
                             <p>For anyone selling, buying or renting.</p>
                             <ul class="d-grid gap-2 p-0 my-3">
@@ -374,9 +372,9 @@
                     </div>
                     <div class="col-lg-4">
                         <article class="service-card rounded-4 h-100 d-flex flex-column">
-                            <span class="service-tag align-self-start mb-4">02 · Most complete</span>
                             <h3>The Full Picture</h3>
                             <p>For anyone planning improvements or purchasing a property.</p>
+                            <p>A complete snapshot of your home as it stands today:</p>
                             <ul class="d-grid gap-2 p-0 my-3">
                                 <li>Everything in The Essential</li>
                                 <li>Measured floor plan</li>
@@ -389,9 +387,9 @@
                     </div>
                     <div class="col-lg-4">
                         <article class="service-card rounded-4 h-100 d-flex flex-column">
-                            <span class="service-tag align-self-start mb-4">03 · Coming soon</span>
-                            <h3>Home Improvement Plan — “The Roadmap”</h3>
+                            <h3>Home Improvement Plan — “The Roadmap” <br /> (COMING SOON)</h3>
                             <p>For anyone ready to invest in their home.</p>
+                            <p>Everything above, plus a prioritised plan for what to do next:</p>
                             <ul class="d-grid gap-2 p-0 my-3">
                                 <li>Everything in The Full Picture</li>
                                 <li>Medium-term improvement plan with prioritised measures</li>
@@ -403,17 +401,16 @@
                         </article>
                     </div>
                     <div class="col-12">
-                        <article class="service-card service-card--wide rounded-4">
-                            <div class="row g-4">
-                                <div class="col-lg-6">
+                        <article class="service-card service-card--wide rounded-4 p-0">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-lg-6 service-copy">
                                     <span class="service-tag align-self-start mb-4">Add-on · The Money Check</span>
                                     <h3>Bill Health Check</h3>
                                     <p>For anyone who wants to know they're not overpaying.</p>
                                     <p class="mb-0">A clear, independent review of your current energy bills, with plain-English findings and clear next steps.</p>
+                                    <p class="right-for pt-3 mt-4 mb-0"><strong>Includes:</strong> review of your current tariff against market rates using Ofgem-approved comparison tools, energy efficiency measures and behaviour changes.<br><br><strong>Right for:</strong> anyone with high bills, anyone who has not reviewed their tariff recently, and homeowners who have made improvements but have not seen their bills drop.</p>
                                 </div>
-                                <div class="col-lg-6">
-                                    <p class="right-for pt-3 pt-lg-0 mt-lg-0 mb-0"><strong>Includes:</strong> review of your current tariff against market rates using Ofgem-approved comparison tools, energy efficiency measures and behaviour changes.<br><br><strong>Right for:</strong> anyone with high bills, anyone who has not reviewed their tariff recently, and homeowners who have made improvements but have not seen their bills drop.</p>
-                                </div>
+                                <div class="col-lg-6"><div class="service-image h-100" role="img" aria-label="A Bristol neighbourhood viewed from above"></div></div>
                             </div>
                         </article>
                     </div>
@@ -427,7 +424,6 @@
                     <div class="col-lg-6"><div class="feature-image h-100" role="img" aria-label="A home energy monitor beside an energy advice guide"></div></div>
                     <div class="col-lg-6">
                         <div class="feature-copy">
-                            <p class="eyebrow mb-3">Advice that sees the whole home</p>
                             <h2>Independent by design.</h2>
                             <p>We do not sell insulation, boilers or solar panels. We give you an honest view of your home so every decision is yours to make with confidence.</p>
                             <ul class="feature-list d-grid gap-3 mt-4 mb-0 p-0">
@@ -447,7 +443,6 @@
                     <div class="col-lg-6"><div class="bill-photo rounded-4 shadow-soft" role="img" aria-label="A close-up of a five pound note"></div></div>
                     <div class="col-lg-6">
                         <div class="bill-copy">
-                            <p class="eyebrow mb-3">The Money Check</p>
                             <h2>Make your bills work harder.</h2>
                             <p>Small changes can make a real difference, but it helps to know where your money is going first. Our Bill Health Check turns confusing energy bills into a simple, useful action plan.</p>
                             <ul class="d-grid gap-2 p-0 my-4">
@@ -479,11 +474,10 @@
         <section id="trust" class="trust">
             <div class="container">
                 <div class="row g-5 mb-5">
-                    <div class="col-lg-5">
+                    <div class="col-6">
                         <p class="eyebrow mb-3">Why trust us?</p>
                         <h2>Standards matter.<br>So does service.</h2>
-                    </div>
-                    <div class="col-lg-7">
+                        <br />
                         <p class="text-muted mb-0">Every recommendation is grounded in recognised training, national standards and a genuine commitment to helping homeowners move forward with confidence.</p>
                     </div>
                 </div>

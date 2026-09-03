@@ -94,7 +94,7 @@
             content: "";
         }
         .hero-content { position: relative; min-height: 650px; }
-        .hero-copy { min-height: 650px; }
+        .hero-copy { min-height: 650px; padding: 80px 54px 80px 0; }
         .hero h1 { max-width: 650px; }
         .hero h1 span { color: var(--green); }
         .hero-intro { max-width: 520px; color: #d9ebe5; font-size: 1.15rem; }
@@ -103,14 +103,18 @@
             background: url("assets/images/hero-homes.jpg") center/cover;
         }
 
+        .mission { padding: 58px 0 24px; }
         .mission-card {
+            padding: 35px 42px;
             border: 1px solid var(--line);
             background: #fff;
         }
-        .mission-card p { width: 100%; max-width: none; color: var(--muted); font-size: 1.08rem; }
-        .mission-card ul { color: var(--muted); }
+        .mission-card p { width: 100%; max-width: none; margin: 0; color: var(--muted); font-size: 1.08rem; }
+        .mission-card p + p { margin-top: 18px; }
 
+        .quick-start { padding: 34px 0 0; }
         .quick-start-card {
+            padding: 35px 42px;
             border: 1px solid var(--line);
             background: #fff;
         }
@@ -119,41 +123,30 @@
         .quick-start-form { min-width: 0; }
         .quick-start-form .hs-form-frame { min-height: 120px; }
 
+        .intro { padding: 115px 0 105px; }
         .intro-copy { color: var(--muted); font-size: 1.08rem; }
         .intro-copy strong { color: var(--deep); }
         .stat-number { color: var(--green); font-family: "Manrope", sans-serif; font-size: 3rem; line-height: 1; }
-        .audience-accordion .accordion-item {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: #fff;
-            overflow: hidden;
-        }
-        .audience-accordion .accordion-button {
-            background: #fff;
-            color: var(--deep);
-            font-weight: 700;
-        }
-        .audience-accordion .accordion-button:not(.collapsed) {
-            background: var(--mint);
-            color: var(--deep);
-            box-shadow: none;
-        }
         .benefit {
+            padding: 22px;
             border: 1px solid var(--line);
             background: #fff;
             font-weight: 700;
         }
 
+        .section { padding: 105px 0; }
         .section--white { background: #fff; }
         .service-card {
             min-height: 100%;
+            padding: 30px;
             border: 1px solid var(--line);
-            background: #fff;
+            background: var(--cream);
         }
         .service-tag {
             display: inline-block;
+            padding: 6px 10px;
             border-radius: 8px;
-            background: var(--cream);
+            background: var(--mint);
             color: var(--deep);
             font-size: .72rem;
             font-weight: 700;
@@ -162,7 +155,7 @@
         }
         .service-card p, .service-card li { color: var(--muted); }
         .service-card ul { list-style: none; }
-        .service-card li { position: relative; font-size: .94rem; }
+        .service-card li { position: relative; padding-left: 23px; font-size: .94rem; }
         .service-card li::before {
             position: absolute;
             top: .62em;
@@ -175,22 +168,18 @@
         }
         .service-card .right-for { border-top: 1px solid var(--line); font-size: .85rem; }
         .service-card--wide { overflow: hidden; background: #eef6ef; }
-        .service-card--wide .service-copy { min-width: 0; }
+        .service-card--wide .service-copy { padding: 30px; }
         .service-card--wide .service-image { min-height: 320px; background: url("assets/images/alvin-c-8qbHt2C7z4E-unsplash.jpg") center/cover; }
-        .epc-steps-card {
-            border: 1px solid var(--line);
-            background: #fff;
-        }
-        .epc-steps-card ol { color: var(--muted); }
 
         .feature-band { background: var(--deep); color: #fff; }
         .feature-image {
             min-height: 510px;
             background: url("assets/images/energy-monitor.jpg") center/cover;
         }
+        .feature-copy { padding: 70px clamp(30px, 7vw, 100px); }
         .feature-copy p { color: #d6e8e2; }
         .feature-list { list-style: none; }
-        .feature-list li { position: relative; }
+        .feature-list li { position: relative; padding-left: 38px; }
         .feature-list li::before {
             position: absolute;
             top: 2px;
@@ -213,29 +202,24 @@
         }
         .bill-copy p, .bill-copy li { color: var(--muted); }
         .bill-copy ul { list-style: none; }
-        .bill-copy li { position: relative; }
-        .bill-copy li::before { position: absolute; left: 0; color: var(--green); content: "✓"; font-weight: 700; }
+        .bill-copy li { padding-left: 23px; }
+        .bill-copy li::before { margin-left: -23px; margin-right: 11px; color: var(--green); content: "✓"; font-weight: 700; }
 
         .testimonial-image {
             min-height: 370px;
             background: url("assets/images/family-walk.jpg") center/cover;
         }
-        .quote-card {
-            border: 1px solid var(--line);
-            background: #fff;
-        }
         blockquote p {
-            font-family: "DM Sans", sans-serif;
-            font-size: 1.08rem;
-            font-style: italic;
-            letter-spacing: normal;
-            line-height: 1.65;
-            color: var(--muted);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            letter-spacing: -.035em;
+            line-height: 1.22;
         }
 
-        .trust { background: var(--cream); }
+        .trust { padding: 105px 0 115px; background: var(--mint); }
         .trust-card {
             min-height: 205px;
+            padding: 22px 16px 18px;
             border: 1px solid rgba(23,56,99,.12);
             background: #fff;
         }
@@ -244,14 +228,15 @@
         .trust-card small { color: var(--muted); font-size: .72rem; }
         .trust-card--ecmk img { width: 139px; height: 37px; }
 
-        .contact { background: var(--deep); color: #fff; }
+        .contact { padding: 105px 0; background: var(--deep); color: #fff; }
         .contact p { max-width: 590px; color: #d6e8e2; font-size: 1.08rem; }
         footer { background: #063333; color: #b9d2ca; font-size: .84rem; }
         footer a { color: #fff; }
 
         @media (max-width: 991.98px) {
             .hero-content, .hero-copy { min-height: auto; }
-            .hero-photo { min-height: 390px; }
+            .hero-copy { padding: 80px 0 50px; }
+            .hero-photo { min-height: 390px; margin-right: -12px; margin-left: -12px; }
             .feature-image { min-height: 360px; }
             .bill-photo { min-height: 310px; }
             .testimonial-image { min-height: 300px; }
@@ -261,6 +246,10 @@
             .brand-tagline { display: none; }
             h1 { font-size: 3.35rem; }
             .hero-photo { min-height: 300px; }
+            .mission, .quick-start { padding-top: 20px; }
+            .mission-card, .quick-start-card { padding: 27px 21px; }
+            .section, .intro, .trust, .contact { padding: 75px 0; }
+            .feature-copy { padding: 58px 22px; }
         }
     </style>
 </head>
@@ -294,7 +283,7 @@
             <div class="container hero-content">
                 <div class="row g-0">
                     <div class="col-lg-5 d-flex align-items-center">
-                        <div class="hero-copy py-5 pe-lg-5">
+                        <div class="hero-copy">
                             <h1>Your home,<br><span>understood.</span></h1>
                             <p class="hero-intro my-4">We help homeowners create more energy efficient homes — reducing running costs, improving comfort and home health, and increasing property value.</p>
                             <a class="btn btn-primary" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
@@ -308,74 +297,19 @@
             </div>
         </section>
 
-        <section class="mission pt-5 pb-4" aria-label="What we do">
+        <section class="mission" aria-label="What we do">
             <div class="container">
-                <div class="mission-card rounded-4 shadow-soft p-4">
-                    <p class="eyebrow mb-2">A better starting point</p>
-                    <h2>Good improvements start with good information.</h2>
-                    <p class="mt-3 mb-0">Britain's homes are leaking heat, money and carbon - and we're here to fix that.</p>
-                    <p class="mt-3 mb-0">27 million homes across the UK are losing energy they don't need to lose, contributing to 28% of the nation's carbon output. We believe fixing that starts with clear, practical advice: the kind that makes your home healthier, more comfortable, and more efficient to run.</p>
-                    <p class="mt-3 mb-0">We provide independent assessments including EPCs, floor plans and bill analysis, giving you the solid foundations to make smart decisions about your home's future.</p>
-                    <p class="mt-3 mb-0">Our services are built for people who are:</p>
-                    <ul class="mt-3 mb-0">
-                        <li>Selling, buying or renting a home.</li>
-                        <li>Planning improvements to a property they own.</li>
-                        <li>Ready to invest in making their home.</li>
-                    </ul>
+                <div class="mission-card rounded-4 shadow-soft">
+                    <p>Before you spend a penny on improvements, you need a clear, accurate picture of your home as it is today.</p>
+                    <p>We provide independent assessments - EPCs and precise home measurements - giving you the foundations to make smart decisions about your home's future.</p>
+                    <p>We are on a mission to fix some of the 27 million leaky homes, contributing to 28% of the UK’s Carbon output.</p>
                 </div>
             </div>
         </section>
 
-        <section class="intro py-5">
+        <section id="quick-start" class="quick-start" aria-labelledby="quick-start-title">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="accordion audience-accordion d-grid gap-3" id="audienceAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingLandlords">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLandlords" aria-expanded="true" aria-controls="collapseLandlords">Landlords</button>
-                                </h2>
-                                <div id="collapseLandlords" class="accordion-collapse collapse show" aria-labelledby="headingLandlords" data-bs-parent="#audienceAccordion">
-                                    <div class="accordion-body">
-                                        <p><strong>Compliant properties. Better yields. Fewer surprises.</strong></p>
-                                        <p><strong>Energy Efficiency</strong> — Know exactly where every property in your portfolio stands, and what it takes to bring it up to standard — before a tenant, buyer, or regulator asks.</p>
-                                        <p><strong>Lower Carbon Emissions</strong> — Stay ahead of tightening EPC and MEES requirements instead of scrambling to catch up. Compliance today protects the value of your portfolio tomorrow.</p>
-                                        <p class="mb-0"><strong>Lower Running Costs</strong> — Efficient homes are easier to let, harder to leave, and cheaper to maintain — protecting your yield property by property.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingHomeowners">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeowners" aria-expanded="false" aria-controls="collapseHomeowners">Private Homeowners</button>
-                                </h2>
-                                <div id="collapseHomeowners" class="accordion-collapse collapse" aria-labelledby="headingHomeowners" data-bs-parent="#audienceAccordion">
-                                    <div class="accordion-body">
-                                        <p><strong>A warmer home. A clearer conscience. A smaller bill.</strong></p>
-                                        <p><strong>Energy Efficiency</strong> — Understand exactly where your home is losing heat and what's worth fixing first — no guesswork, no upsell, just an honest picture.</p>
-                                        <p><strong>Lower Carbon Emissions</strong> — Make improvements that genuinely reduce your home's footprint, not just ones that look good on paper.</p>
-                                        <p class="mb-0"><strong>Lower Running Costs</strong> — Turn wasted energy into money back in your pocket, with changes that pay for themselves over time.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSocialHousing">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSocialHousing" aria-expanded="false" aria-controls="collapseSocialHousing">Social Housing</button>
-                                </h2>
-                                <div id="collapseSocialHousing" class="accordion-collapse collapse" aria-labelledby="headingSocialHousing" data-bs-parent="#audienceAccordion">
-                                    <div class="accordion-body">
-                                        <p class="mb-0"><strong>Better homes for residents. Lower costs for everyone.</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="quick-start" class="quick-start pt-5" aria-labelledby="quick-start-title">
-            <div class="container">
-                <div class="quick-start-card rounded-4 shadow-soft p-4">
+                <div class="quick-start-card rounded-4 shadow-soft">
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <p class="eyebrow mb-2">Start here</p>
@@ -392,7 +326,30 @@
             </div>
         </section>
 
-        <section id="services" class="section py-5">
+        <section class="intro">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5">
+                        <p class="eyebrow mb-3">A better starting point</p>
+                        <h2>Good improvements start with good information.</h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="intro-copy">
+                            <p>We provide independent assessments — EPCs and precise home measurements — giving you the foundations to make smart decisions about your home's future.</p>
+                            <p>Our mission is to help fix some of the <strong>27 million leaky homes</strong> contributing to 28% of the UK's carbon output. That means practical advice that makes homes healthier, more comfortable and more efficient.</p>
+                            <div class="d-flex align-items-center gap-3 mt-4 text-dark"><strong class="stat-number">27m</strong><span>homes in the UK need a clearer path to better performance.</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 mt-5">
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Improved energy efficiency</div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Lower carbon emissions</div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Lower running costs</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section section--white">
             <div class="container">
                 <div class="row g-4 align-items-end mb-5">
                     <div class="col-lg-12">
@@ -402,82 +359,60 @@
                 </div>
                 <div class="row g-3">
                     <div class="col-lg-4">
-                        <article class="service-card rounded-4 h-100 d-flex flex-column p-4">
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
                             <h3>The Essential EPC</h3>
                             <p>For anyone selling, buying or renting.</p>
-                            <p>Getting an EPC shouldn't feel like a mystery - here's exactly what happens, from booking to certificate.</p>
-                            <a class="btn btn-outline-secondary btn-sm mb-2" href="#epc-steps-box">Click to view all steps</a>
-                            <p><strong>Your EPC will provide:</strong></p>
-                            <ul class="d-grid gap-2 p-0 mb-3">
-                                <li class="ps-4">Legally valid Energy Performance Certificate (A–G rating).</li>
-                                <li class="ps-4">RdSAP energy assessment.</li>
-                                <li class="ps-4">Improvement recommendations report.</li>
+                            <ul class="d-grid gap-2 p-0 my-3">
+                                <li>Legally valid Energy Performance Certificate (A–G rating)</li>
+                                <li>RdSAP energy assessment</li>
+                                <li>Improvement recommendations report</li>
                             </ul>
                             <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> sellers, landlords and buyers wanting a baseline.</p>
                         </article>
                     </div>
                     <div class="col-lg-4">
-                        <article class="service-card rounded-4 h-100 d-flex flex-column p-4">
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
                             <h3>The Full Picture</h3>
                             <p>For anyone planning improvements or purchasing a property.</p>
                             <p>A complete snapshot of your home as it stands today:</p>
                             <ul class="d-grid gap-2 p-0 my-3">
-                                <li class="ps-4">Everything in The Essential</li>
-                                <li class="ps-4">Measured floor plan</li>
-                                <li class="ps-4">Condition report: damp, mould and structural concerns noted</li>
-                                <li class="ps-4">Occupancy assessment: how you use your home affects recommendations</li>
-                                <li class="ps-4">Ventilation survey <strong>(coming soon)</strong></li>
+                                <li>Everything in The Essential</li>
+                                <li>Measured floor plan</li>
+                                <li>Condition report: damp, mould and structural concerns noted</li>
+                                <li>Occupancy assessment: how you use your home affects recommendations</li>
+                                <li>Ventilation survey <strong>(coming soon)</strong></li>
                             </ul>
                             <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> new buyers, homeowners before renovation and anyone unsure where to start.</p>
                         </article>
                     </div>
                     <div class="col-lg-4">
-                        <article class="service-card rounded-4 h-100 d-flex flex-column p-4">
-                            <h3>Bill Health Check</h3>
-                            <p>For anyone who wants to know they're not overpaying.</p>
-                            <p>A clear, independent review of your current energy bills, with plain-English findings and clear next steps.</p>
+                        <article class="service-card rounded-4 h-100 d-flex flex-column">
+                            <h3>Home Improvement Plan — “The Roadmap” <br /> (COMING SOON)</h3>
+                            <p>For anyone ready to invest in their home.</p>
+                            <p>Everything above, plus a prioritised plan for what to do next:</p>
                             <ul class="d-grid gap-2 p-0 my-3">
-                                <li class="ps-4">Current tariff reviewed against market rates.</li>
-                                <li class="ps-4">Energy efficiency measures and behaviour changes highlighted.</li>
-                                <li class="ps-4">Plain-English summary with clear next steps.</li>
+                                <li>Everything in The Full Picture</li>
+                                <li>Medium-term improvement plan with prioritised measures</li>
+                                <li>Estimated costs and potential savings for each improvement</li>
+                                <li>Guidance on funding, grants and sequencing work correctly</li>
+                                <li>Significance assessment for older or listed homes</li>
                             </ul>
-                            <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> anyone with high bills, anyone who has not reviewed their tariff recently, and homeowners who have made improvements but have not seen their bills drop.</p>
+                            <p class="right-for mt-auto pt-3 mb-0"><strong>Right for:</strong> homeowners planning upgrades, retrofit projects and maximising property value.</p>
                         </article>
                     </div>
                     <div class="col-12">
-                        <div class="mt-4" id="epc-steps-box">
-                            <div class="epc-steps-card rounded-4 p-4">
-                                <h3 class="mb-3">EPC process: all 6 steps</h3>
-                                <ol class="mb-0 ps-3 d-grid gap-2">
-                                    <li><strong>Book Your Assessment.</strong> We arrange a convenient time to visit your property. Assessments typically take 30–60 minutes depending on the size and complexity of the home.</li>
-                                    <li><strong>On-Site Survey.</strong> A qualified assessor inspects the property — walls, windows, roof, heating system, insulation, and lighting — recording the details that determine energy performance.</li>
-                                    <li><strong>Data Analysis.</strong> The information is run through approved government software (RdSAP) to calculate the property's energy efficiency and environmental impact ratings.</li>
-                                    <li><strong>EPC Generated.</strong> You receive an official certificate rating the property from A (most efficient) to G (least efficient), valid for 10 years.</li>
-                                    <li><strong>Recommendations Report.</strong> Alongside the rating, we provide a clear list of improvements — such as insulation or heating upgrades — with their likely impact on efficiency and running costs.</li>
-                                    <li><strong>Lodged on the Register.</strong> The EPC is registered on the official government database, satisfying legal requirements for selling, letting, or compliance purposes.</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    <div class="col-12">                        
                         <article class="service-card service-card--wide rounded-4 p-0">
                             <div class="row g-0 align-items-stretch">
-                                <div class="col-lg-6 service-copy p-4">
-                                    <span class="service-tag align-self-start mb-4 py-1 px-2">In development</span>
-                                    <h3>Home Improvement Plan — “The Roadmap” <br /> (COMING SOON)</h3>
-                                    <p>For anyone ready to invest in their home.</p>
-                                    <p class="mb-0">Everything above, plus a prioritised plan for what to do next.</p>
-                                    <p class="right-for pt-3 mt-4 mb-0"><strong>Planned includes:</strong> medium-term improvement plan with prioritised measures, estimated costs and potential savings, guidance on funding and sequencing, and significance assessments for older or listed homes.<br><br><strong>Right for:</strong> homeowners planning upgrades, retrofit projects and maximising property value.</p>
+                                <div class="col-lg-6 service-copy">
+                                    <span class="service-tag align-self-start mb-4">Add-on · The Money Check</span>
+                                    <h3>Bill Health Check</h3>
+                                    <p>For anyone who wants to know they're not overpaying.</p>
+                                    <p class="mb-0">A clear, independent review of your current energy bills, with plain-English findings and clear next steps.</p>
+                                    <p class="right-for pt-3 mt-4 mb-0"><strong>Includes:</strong> review of your current tariff against market rates using Ofgem-approved comparison tools, energy efficiency measures and behaviour changes.<br><br><strong>Right for:</strong> anyone with high bills, anyone who has not reviewed their tariff recently, and homeowners who have made improvements but have not seen their bills drop.</p>
                                 </div>
-                                <div class="col-lg-6"><div class="service-image" role="img" aria-label="A Bristol neighbourhood viewed from above"></div></div>
+                                <div class="col-lg-6"><div class="service-image h-100" role="img" aria-label="A Bristol neighbourhood viewed from above"></div></div>
                             </div>
                         </article>
-                    </div>
-                </div>
-                <div class="row  mt-5">
-                    <div class="col-12 services-cta text-center">                        
-                        <a class="btn btn-primary" href="mailto:info@evenflowhomesolutions.co.uk">Email us <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
             </div>
@@ -488,13 +423,13 @@
                 <div class="row g-0">
                     <div class="col-lg-6"><div class="feature-image h-100" role="img" aria-label="A home energy monitor beside an energy advice guide"></div></div>
                     <div class="col-lg-6">
-                        <div class="feature-copy p-5">
+                        <div class="feature-copy">
                             <h2>Independent by design.</h2>
                             <p>We do not sell insulation, boilers or solar panels. We give you an honest view of your home so every decision is yours to make with confidence.</p>
                             <ul class="feature-list d-grid gap-3 mt-4 mb-0 p-0">
-                                <li class="ps-5"><strong>Whole-house thinking.</strong><br>Energy use, condition, occupancy and ventilation considered together.</li>
-                                <li class="ps-5"><strong>Advice before action.</strong><br>Clear priorities before you commit to improvements.</li>
-                                <li class="ps-5"><strong>Local understanding.</strong><br>Bath, Bristol, Keynsham and the wider South West region.</li>
+                                <li><strong>Whole-house thinking.</strong><br>Energy use, condition, occupancy and ventilation considered together.</li>
+                                <li><strong>Advice before action.</strong><br>Clear priorities before you commit to improvements.</li>
+                                <li><strong>Local understanding.</strong><br>Bath, Bristol, Keynsham and the wider South West region.</li>
                             </ul>
                         </div>
                     </div>
@@ -502,46 +437,44 @@
             </div>
         </section>
 
-        <section class="section py-5">
+        <section class="section">
             <div class="container">
                 <div class="row g-5 align-items-center">
+                    <div class="col-lg-6"><div class="bill-photo rounded-4 shadow-soft" role="img" aria-label="A close-up of a five pound note"></div></div>
                     <div class="col-lg-6">
                         <div class="bill-copy">
                             <h2>Make your bills work harder.</h2>
                             <p>Small changes can make a real difference, but it helps to know where your money is going first. Our Bill Health Check turns confusing energy bills into a simple, useful action plan.</p>
                             <ul class="d-grid gap-2 p-0 my-4">
-                                <li class="ps-4">Current tariff reviewed against market rates.</li>
-                                <li class="ps-4">Energy-efficient measures and behaviour changes highlighted.</li>
-                                <li class="ps-4">Plain-English summary with clear next steps.</li>
+                                <li>Current tariff reviewed against market rates</li>
+                                <li>Energy-efficient measures and behaviour changes highlighted</li>
+                                <li>Plain-English summary with clear next steps</li>
                             </ul>
                             <a class="btn btn-primary" href="#quick-start">Ask about a Bill Health Check <span aria-hidden="true">↗</span></a>
                         </div>
                     </div>
-                    <div class="col-lg-6"><div class="bill-photo rounded-4 shadow-soft" role="img" aria-label="A close-up of a five pound note"></div></div>
                 </div>
             </div>
         </section>
 
-        <section id="story" class="section py-5">
+        <section id="story" class="section section--white">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-4"><div class="testimonial-image rounded-4" role="img" aria-label="A family walking together outdoors"></div></div>
                     <div class="col-lg-8">
-                        <div class="quote-card rounded-4 h-100 p-4">
-                            <blockquote class="mb-0">
-                                <p class="mb-4">“Getting multiple heat pump quotes was overwhelming until Rich stepped in. He asked the right questions, flagged things we hadn't considered and helped us compare options on a level playing field. We left the conversation feeling informed and confident — not just sold to.”</p>
-                                <cite class="text-muted fst-normal">Helen, Keynsham Resident</cite>
-                            </blockquote>
-                        </div>
+                        <blockquote class="mb-0">
+                            <p class="mb-4">“Getting multiple heat pump quotes was overwhelming until Rich stepped in. He asked the right questions, flagged things we hadn't considered, and helped us compare options on a level playing field. We left the conversation feeling informed and confident — not just sold to.”</p>
+                            <cite class="text-muted fst-normal">Helen, Keynsham Resident</cite>
+                        </blockquote>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="trust" class="trust py-5">
+        <section id="trust" class="trust">
             <div class="container">
                 <div class="row g-5 mb-5">
-                    <div class="col-lg-6">
+                    <div class="col-6">
                         <p class="eyebrow mb-3">Why trust us?</p>
                         <h2>Standards matter.<br>So does service.</h2>
                         <br />
@@ -550,39 +483,39 @@
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6 col-lg-3">
-                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center pt-4 px-3 pb-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
                             <img src="assets/images/energytrust.png" alt="Energy Trust logo">
                             <strong>Energy Trust</strong><small>Trained with</small>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center pt-4 px-3 pb-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
                             <img src="assets/images/energy-trust.png" alt="TrustMark Government Endorsed Quality logo">
                             <strong>TrustMark</strong><small>Government-endorsed quality</small>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center pt-4 px-3 pb-3">
+                        <div class="trust-card rounded-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
                             <img src="assets/images/APM.png" alt="Association for Project Management Project Fundamentals Qualification logo">
                             <strong>APM Project Management</strong><small>Project Fundamentals Qualification</small>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="trust-card trust-card--ecmk rounded-4 h-100 d-flex flex-column align-items-center justify-content-center text-center gap-3 pt-4 px-3 pb-3">
+                        <div class="trust-card trust-card--ecmk rounded-4 h-100 d-flex flex-column align-items-center justify-content-center text-center gap-3">
                             <img src="assets/images/ecmk.svg" alt="ECMK logo">
                             <strong>ECMK</strong><small>Accreditation Scheme Membership · ECMK308037</small>
                         </div>
                     </div>
                 </div>
                 <div class="row g-3 mt-4">
-                    <div class="col-md-4"><div class="benefit rounded-4 h-100 p-4">Uphold standards<br><small class="text-muted fw-normal">PAS 2035 compliant national standards for managing retrofit projects</small></div></div>
-                    <div class="col-md-4"><div class="benefit rounded-4 h-100 p-4">Quality assured<br><small class="text-muted fw-normal">Registered government-endorsed quality with TrustMark</small></div></div>
-                    <div class="col-md-4"><div class="benefit rounded-4 h-100 p-4">Timely and efficient<br><small class="text-muted fw-normal">Qualified Project Manager through the Association for Project Managers</small></div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Uphold standards<br><small class="text-muted fw-normal">PAS 2035 compliant national standards for managing retrofit projects</small></div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Quality assured<br><small class="text-muted fw-normal">Registered1 government-endorsed quality with TrustMark</small></div></div>
+                    <div class="col-md-4"><div class="benefit rounded-4 h-100">Timely and efficient<br><small class="text-muted fw-normal">Qualified Project Manager through the Association for Project Managers</small></div></div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact py-5">
+        <section id="contact" class="contact">
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-8">
